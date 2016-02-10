@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="js/avatar.js"></script>
+  <link rel="stylesheet" type="text/css" href="avatar.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>User Directory</title>
+</head>
+<body>
+<div ng-app='app' ng-controller='mainCtrl'>
+
+
+<div id="header">
+	<div id="content">
+	<h1>Add a new user to the directory</h1>
+	<h3>Enter a user's name and a URL for their avatar to add them to our directory<h3>
+		<form name='userForm' ng-submit='addNew(userForm)'>
+			  <input placeholder='Name' ng-model='userForm.name'/>
+			  <input placeholder='Image Url' ng-model='userForm.url'/>
+			  <button type='submit'>Add New</button>
+		</form>
+	</div>
+</div>
+
+<div id="box">
+	<div id="content">
+		<ul class='User-list'>
+		 <li ng-repeat='user in users'>
+		  <avatar user='user' />  
+		 </li>
+	</div>
+</div>
+
+</body>
+</html>
